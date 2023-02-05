@@ -5,6 +5,7 @@ init();
 let firstNumber;
 let secondNumber;
 let operator;
+let result;
 
 function init() {
   console.log("initialize!!");
@@ -16,6 +17,7 @@ function clickCalculate() {
   readFirstNumber();
   readSecondNumber();
   readOperator();
+  calculating();
 }
 
 function readFirstNumber() {
@@ -29,9 +31,28 @@ function readSecondNumber() {
 }
 
 function readOperator() {
-  console.log("reading operator!!");
+  operator = document.querySelector("#operator").value;
+  console.log(operator);
 }
 
-function Calculating() {
+function calculating() {
   console.log("button clicked");
+
+  if (operator == "add") {
+    result = firstNumber + secondNumber;
+  }
+
+  if (operator == "sub") {
+    result = firstNumber - secondNumber;
+  }
+
+  if (operator == "mul") {
+    result = firstNumber * secondNumber;
+  }
+
+  if (operator == "div") {
+    result = firstNumber / secondNumber;
+  }
+
+  console.log("it is", result);
 }
