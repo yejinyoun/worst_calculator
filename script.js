@@ -6,6 +6,8 @@ let firstNumber;
 let secondNumber;
 let operator;
 let result;
+let roundOn;
+let round;
 
 function init() {
   console.log("initialize!!");
@@ -18,6 +20,7 @@ function clickCalculate() {
   readSecondNumber();
   readOperator();
   calculating();
+  checkRound();
 }
 
 function readFirstNumber() {
@@ -55,4 +58,24 @@ function calculating() {
   }
 
   console.log("it is", result);
+}
+
+function checkRound() {
+  roundOn = document.querySelector("#doround").checked;
+  if (roundOn == true) {
+    doRounding();
+  }
+}
+
+function doRounding() {
+  //read number of decimals
+
+  round = Number(document.querySelector("#decimals").value);
+  console.log(round);
+
+  //round result to number of decimals
+
+  result = Number(result.toFixed(round));
+
+  console.log(result);
 }
