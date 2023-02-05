@@ -21,6 +21,7 @@ function clickCalculate() {
   readOperator();
   calculating();
   checkRound();
+  showResult();
 }
 
 function readFirstNumber() {
@@ -78,4 +79,17 @@ function doRounding() {
   result = Number(result.toFixed(round));
 
   console.log(result);
+}
+
+function showResult() {
+  document.querySelector("#firstnumber").value = result;
+  appendResult();
+}
+
+function appendResult() {
+  const parent = document.querySelector("#results");
+  const child = document.createElement("li");
+  child.textContent = result;
+
+  parent.appendChild(child);
 }
