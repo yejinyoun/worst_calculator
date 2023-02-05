@@ -22,6 +22,7 @@ function clickCalculate() {
   calculating();
   checkRound();
   showResult();
+  scrolling();
 }
 
 function readFirstNumber() {
@@ -92,4 +93,20 @@ function appendResult() {
   child.textContent = result;
 
   parent.appendChild(child);
+}
+
+function scrolling() {
+  document.querySelector("#results").scrollTo(0, 100000000000);
+}
+
+document.querySelector("#clear").addEventListener("click", clearButton);
+
+function clearButton() {
+  console.log("button clicked");
+  clearResult();
+}
+
+function clearResult() {
+  console.log("clear!!");
+  document.querySelector("#results").replaceChildren();
 }
